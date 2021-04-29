@@ -1,0 +1,277 @@
+/*
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+*/
+
+
+* {
+    font-family: 'Play', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.body {
+    color: #d4d4d4;
+    background-color: #222;
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.header {
+    background: linear-gradient(to bottom, #610000 0, #000 50%,#202020 100%);
+}
+
+.container {
+    padding: 1rem;
+    width: 100%;
+    max-width: 1536px;
+    margin: 0 auto;
+}
+
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.header-logo {
+    width: 20%;
+    transition: .2s ease-in-out;
+}
+
+.header-logo:hover {
+    transform: scale(1.20) translateX(5%);
+}
+
+.header-contacts {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+
+.lnk-telegram {
+    display: flex;
+    font-weight: bold;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    justify-content: center;
+}
+
+.lnk-phone {
+    display: flex;
+    font-weight: bold;
+    font-size: 1.8rem;
+    line-height: 2rem;
+    justify-content: center;
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    color: #d4d4d4;
+    text-decoration: none;
+    transition: .2s ease-in-out;
+}
+
+.link:hover {
+    color: #dc2626;
+    transform: scale(1.15);
+}
+
+.header-button {
+    width: 20%;
+}
+
+.btn {
+    background-color: transparent;
+}
+
+.btn-enter {
+    float: right;
+}
+
+.wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.aside {
+    width: 200px;
+    margin-top: .4rem;
+    height: 800px;
+    background: linear-gradient(to bottom,#222 0,#000 50%,#222 100%);
+    border: 2px solid #d4d4d4;
+    border-radius: .4rem;
+}
+
+.wrap-card {
+    width:  calc(100% - 200px);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: calc(50% - 0.8rem);
+    margin: .4rem;
+    /* max-width: 35rem; */
+    padding: .5rem .8rem;
+    border: 2px solid #d4d4d4;
+    border-radius: .4rem;
+    background: linear-gradient(to bottom,#222 0,#000 50%,#222 100%);
+}
+
+.card__body {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    color: #d4d4d4;
+}
+
+.card__logo {
+    width: 33%;
+    margin: auto;
+}
+
+.logo {
+    max-width: 100%;
+    border: 2px solid #d4d4d4;
+    border-radius: .4rem;
+}
+
+.card__descr {
+    display: flex;
+    width: 65%;
+    flex-direction: column;
+    margin-left: 2%;
+
+}
+
+.card__header {
+    font-size: 1.3rem;
+    line-height: 1.75rem;
+    font-weight: bold;
+    margin: 0 auto .4rem;
+    padding: .3rem .5rem;
+}
+
+.info-card {
+    margin-top: 2%;
+}
+
+.info-card p {
+    margin: 1%;
+}
+
+.card__footer {
+    width: 100%;
+    height: 100%;
+    margin-top: .2rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.btn-red {
+    display: inline-block;
+    padding: .5rem 1rem;
+    border-radius: .4rem;
+    text-decoration: none;
+    color:#dc2626;
+    border: 2px solid #dc2626;
+    transition: .3s ease-in-out;
+}
+
+.btn-red:hover {
+    background-color: #dc2626;
+    color: #d4d4d4;
+}
+
+.btn-red:focus {
+    box-shadow: 0 0 0 1px #d4d4d4;
+    outline: none;
+}
+
+.btn-red:active {
+    background-color: #222;
+}
+
+.card__tags {
+    margin-top: 0.2rem;
+}
+.card__tag {
+    text-decoration: none;
+    display: inline-block;
+    margin: .2rem;
+    color: #d4d4d4;
+    font-size: .6rem;
+    line-height: 1rem;
+    padding: .25rem .75rem;
+    border: 1px solid #d4d4d4;
+    border-radius: 100rem;
+    transition: ease-in-out .3s;
+}
+
+.card__tag:hover {
+    color: #d4d4d4;
+    background-color: #dc2626;
+    border-color: #dc2626;
+}
+
+.card__tag:active {
+    background-color: #333;
+}
+
+.card__percent {
+    font-size: 3rem;
+    line-height: 2.5rem;
+    font-weight: bold;
+    float: right;
+    text-align: center;
+    padding: .2rem .4rem;
+    border-radius: .4rem;
+    background-color: #dc2626;
+    color: #111;
+}
+
+.btn-filter {
+    display: none;
+}
+
+.footer {
+    background-color: #000000;
+    padding: 1rem 0;
+    width: 100%;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .header-button {
+        width: 100%;
+    }
+    .btn-filter {
+        display: inline-block;
+    }
+    .lnk-telegram, .lnk-phone {
+        justify-content: flex-end;
+    }
+    .header-contacts {
+        width: 80%;
+        transform: scale(.8) translateX(10%);
+    }
+    .lnk-telegram {
+
+    }
+    .link:hover {
+        transform: none;
+    }
+}
+
+@media (max-width: 1023px) {
+    .card {
+        width: calc(100% - 0.8rem);
+    }
+}
