@@ -1021,9 +1021,6 @@ select {
 .h-20 {
 	height: 5rem;
 }
-.h-0 {
-	height: 0px;
-}
 .max-h-screen {
 	max-height: 100vh;
 }
@@ -1280,6 +1277,14 @@ select {
 .divide-gray-500 > :not([hidden]) ~ :not([hidden]) {
 	--tw-divide-opacity: 1;
 	border-color: rgba(107, 114, 128, var(--tw-divide-opacity));
+}
+.divide-gray-600 > :not([hidden]) ~ :not([hidden]) {
+	--tw-divide-opacity: 1;
+	border-color: rgba(75, 85, 99, var(--tw-divide-opacity));
+}
+.divide-gray-700 > :not([hidden]) ~ :not([hidden]) {
+	--tw-divide-opacity: 1;
+	border-color: rgba(55, 65, 81, var(--tw-divide-opacity));
 }
 .overflow-y-hidden {
 	overflow-y: hidden;
@@ -1819,9 +1824,6 @@ select {
 .duration-500 {
 	transition-duration: 500ms;
 }
-.duration-1000 {
-	transition-duration: 1000ms;
-}
 .ease-in-out {
 	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -1935,7 +1937,7 @@ select {
     box-shadow: 0 0 8px 2px rgb(0 0 0 / 25%);
 }
 .success {
-    position: absolute;
+    position: fixed;
     top: 1rem;
     right: 50%;
     left: 50%;
@@ -1951,6 +1953,7 @@ select {
     padding: 1rem;
     border-radius: .4rem;
     box-shadow: 0 0 8px 2px rgb(0 0 0 / 25%);
+    transition: all;
 }
 .form {
     margin: auto;
@@ -2312,6 +2315,10 @@ select {
 	--tw-bg-opacity: 1;
 	background-color: rgba(249, 250, 251, var(--tw-bg-opacity));
 }
+.hover\:bg-gray-800:hover {
+	--tw-bg-opacity: 1;
+	background-color: rgba(31, 41, 55, var(--tw-bg-opacity));
+}
 .hover\:bg-opacity-50:hover {
 	--tw-bg-opacity: 0.5;
 }
@@ -2409,6 +2416,10 @@ select {
 	--tw-bg-opacity: 1;
 	background-color: rgba(243, 244, 246, var(--tw-bg-opacity));
 }
+.focus\:bg-red-800:focus {
+	--tw-bg-opacity: 1;
+	background-color: rgba(153, 27, 27, var(--tw-bg-opacity));
+}
 .focus\:bg-indigo-100:focus {
 	--tw-bg-opacity: 1;
 	background-color: rgba(224, 231, 255, var(--tw-bg-opacity));
@@ -2416,10 +2427,6 @@ select {
 .focus\:bg-gray-50:focus {
 	--tw-bg-opacity: 1;
 	background-color: rgba(249, 250, 251, var(--tw-bg-opacity));
-}
-.focus\:bg-red-800:focus {
-	--tw-bg-opacity: 1;
-	background-color: rgba(153, 27, 27, var(--tw-bg-opacity));
 }
 .focus\:text-gray-700:focus {
 	--tw-text-opacity: 1;
@@ -2566,11 +2573,6 @@ select {
 		padding-right: 1.5rem;
 	}
 
-	.sm\:px-2 {
-		padding-left: 0.5rem;
-		padding-right: 0.5rem;
-	}
-
 	.sm\:pt-0 {
 		padding-top: 0px;
 	}
@@ -2693,11 +2695,6 @@ select {
 	.lg\:px-8 {
 		padding-left: 2rem;
 		padding-right: 2rem;
-	}
-
-	.lg\:px-4 {
-		padding-left: 1rem;
-		padding-right: 1rem;
 	}
 
 	.lg\:shadow-none {

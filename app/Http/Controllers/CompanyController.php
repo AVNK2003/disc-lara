@@ -54,9 +54,16 @@ class CompanyController extends Controller
      */
     public function show(Company $company)
     {
+        $comments = \App\Models\Comment::where('company_id', $company->id)
+            ->where('published', true)
+            ->get();
+        $company->views++;
+        $company->save();
+
         return view('admin.company.show', [
-            'layout' => 'layouts.admin',
+            'layout' => 'layouts.layout',
             'company' => $company,
+            'comments'=> $comments,
         ]);
     }
 

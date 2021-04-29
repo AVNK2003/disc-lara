@@ -1,6 +1,6 @@
 @if(session('success'))
 
-    <div x-data="{open: true}" x-show.transition.opacity="open" @click.away="open=false" class="success flex justify-center w-44">
+    <div x-data="{open: true}" x-show.transition.opacity.duration.500="open" @click.away="open=false" class="success flex justify-center w-44">
         <div class="font-medium">
             {{ session('success') }}
         </div>

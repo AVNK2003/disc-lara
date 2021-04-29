@@ -12,12 +12,12 @@
             Добавить категорию
         </a>
     </div>
-    <div class="flex flex-col mt-6">
-        <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-            <div class="inline-block min-w-full py-3 align-middle sm:px-6 lg:px-8">
+    <div class="flex flex-col mt-2">
+        <div class="overflow-x-auto">
+            <div class="inline-block min-w-full py-2 align-middle px-2">
                 <div class="overflow-hidden rounded-md shadow-md">
                     <table class="min-w-full overflow-x-scroll divide-y divide-gray-300">
-                        <thead class="bg-gray-800">
+                        <thead class="bg-black">
                         <tr>
                             <th
                                 scope="col"
@@ -39,7 +39,7 @@
                             </th>
                         </tr>
                         </thead>
-                        <tbody class="bg-gray-800 divide-y divide-gray-500">
+                        <tbody class="bg-gray-900 divide-y divide-gray-500">
                         @foreach($categories as $category)
                             {{--                        <template x-for="i in 10" :key="i">--}}
                             <tr class="transition-all hover:bg-gray-700">

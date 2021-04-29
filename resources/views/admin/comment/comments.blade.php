@@ -10,7 +10,7 @@
         <div class="overflow-x-auto">
             <div class="inline-block min-w-full py-2 align-middle px-2">
                 <div class="overflow-hidden rounded-md shadow-md">
-                    <table class="min-w-full overflow-x-scroll divide-y divide-gray-300">
+                    <table class="min-w-full overflow-x-scroll divide-y divide-gray-500">
                         <thead class="bg-black">
                         <tr>
                             <th
@@ -33,7 +33,7 @@
                             </th>
                         </tr>
                         </thead>
-                        <tbody class="bg-gray-900 divide-y divide-gray-500">
+                        <tbody class="bg-gray-900 divide-y divide-gray-600">
                         @foreach($comments as $comment)
                             <tr class="transition-all hover:bg-gray-700"
                                 title="Оценка {{$comment->rating}}&#10;&#10;{{$comment->review}}">
