@@ -1,10 +1,16 @@
-@extends($layout)
+@extends('layouts.layout')
 @section('scriptMap')
     <script src="https://api-maps.yandex.ru/2.1/?apikey=ff28f6ad-d2a1-40a6-b0fe-3ede2df62e11&lang=ru&load=package.standard"
             type="text/javascript">
     </script>
 @endsection
-@section('linksAside') <x-aside-links-all />@endsection
+@section('linksAside')
+{{--  Ссылки в боковой панели если заходят из кабинета  --}}
+    @if($cabinet) <x-aside-links-admins />
+{{--  Ссылки в боковой панели если заходят с главной  --}}
+    @else <x-aside-links-all />
+    @endif
+@endsection
 @section('content')
 
     <section class="rounded-md border overflow-hidden shadow-md">
@@ -32,7 +38,7 @@
         <div class="sm:flex bg-gradient-to-b from-[#222222] via-black to-[#222222]">
 
             <div class="flex max-h-full">
-                <img class="mx-auto md:my-auto md:pl-4" src="
+                <img class="m-auto md:pl-4" src="
                 @if($company->img)
                     /img/uploads/thumbnail/{{$company->img}}
                 @else

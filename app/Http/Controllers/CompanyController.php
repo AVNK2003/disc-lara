@@ -61,7 +61,7 @@ class CompanyController extends Controller
         $company->save();
 
         return view('admin.company.show', [
-            'layout' => 'layouts.layout',
+            'cabinet' => true,
             'company' => $company,
             'comments'=> $comments,
         ]);
@@ -151,7 +151,7 @@ class CompanyController extends Controller
         $company->views++;
         $company->save();
         return view('admin.company.show', [
-            'layout' => 'layouts.layout',
+            'cabinet' => false,
             'company' => $company,
             'comments'=> $comments,
         ]);

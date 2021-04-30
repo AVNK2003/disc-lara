@@ -51,6 +51,7 @@ Route::prefix('cabinet')->group(function () {
     Route::resource('user', \App\Http\Controllers\UserController::class)->middleware(['auth']);
     Route::resource('company', \App\Http\Controllers\CompanyController::class)->middleware(['auth']);
     Route::resource('comment', \App\Http\Controllers\CommentController::class)->middleware(['auth']);
+    Route::resource('infoLink', \App\Http\Controllers\infoLinksController::class)->middleware(['auth']);
     Route::put('comment/{comment}/moderate', [\App\Http\Controllers\CommentController::class, 'togglePublish'])->name('togglePublish');
 });
 

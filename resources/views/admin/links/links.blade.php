@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-@section('title', 'Города')
+@section('title', 'Ссылки')
 @section('linksAside') <x-aside-links-admins />@endsection
 @section('content')
     <x-success-session />
@@ -7,9 +7,9 @@
 <div class="flex items-baseline justify-center">
     <a
         class="py-2 px-4 space-x-2 rounded-md border hover:bg-red-800"
-        href="{{ route('city.create') }}"
+        href="{{ route('infoLink.create') }}"
     >
-        Добавить город
+        Добавить ссылку
     </a>
 </div>
     <div class="flex flex-col mt-6">
@@ -27,7 +27,12 @@
                             <th
                                 scope="col"
                                 class="px-3 py-2 text-xs font-medium tracking-wider text-left text-gray-300 uppercase">
-                                Название англ
+                                Ссылка
+                            </th>
+                            <th
+                                scope="col"
+                                class="px-3 py-2 text-xs font-medium tracking-wider text-left text-gray-300 uppercase">
+                                Дата изменения
                             </th>
                             <th scope="col" class="relative px-6 py-3">
                                 <span class="sr-only">Edit</span>
@@ -35,20 +40,25 @@
                         </tr>
                         </thead>
                         <tbody class="bg-gray-900 divide-y divide-gray-600">
-                        @foreach($cities as $city)
+                        @foreach($links as $link)
                             <tr class="transition-all hover:bg-gray-700">
                                 <td class="px-3 py-3 whitespace-nowrap">
                                     <div class="text-sm text-gray-300">
-                                        {{ $city->name }}
+                                        {{ $link->title }}
                                     </div>
                                 </td>
                                 <td class="px-3 py-3 whitespace-nowrap">
                                     <div class="text-sm text-gray-300">
-                                        {{ $city->eng }}
+                                        {{ $link->slug }}
+                                    </div>
+                                </td>
+                                <td class="px-3 py-3 whitespace-nowrap">
+                                    <div class="text-sm text-gray-300">
+                                        {{ $link->updated_at }}
                                     </div>
                                 </td>
                                 <td class="flex justify-around px-3 py-4 text-sm font-medium text-right whitespace-nowrap">
-                                    <a href="{{ route('city.edit', [$city]) }}"
+                                    <a href="{{ route('infoLink.edit', [$link]) }}"
                                        class="text-indigo-600 hover:text-indigo-700">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
                                              viewBox="0 0 24 24" stroke="currentColor">
@@ -57,7 +67,7 @@
                                         </svg>
                                     </a>
                                     <form
-                                        action="{{ route('city.destroy', [$city]) }}"
+                                        action="{{ route('infoLink.destroy', [$link]) }}"
                                         method="POST"
                                         x-data x-ref="form">
                                         @method('delete')

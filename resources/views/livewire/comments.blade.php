@@ -5,7 +5,7 @@
         <x-success-modal/>
 
         @foreach($comments as $comment)
-        <div class="flex items-start bg-gray-900 rounded py-4 mt-4">
+        <div class="flex items-start bg-gray-900 rounded py-4 mb-4">
             <div class="mx-6 w-full">
                 <div class="flex items-center justify-between">
                     <div>
@@ -67,7 +67,7 @@
         {{--            Форма для отзыва--}}
         <form action="#" class="rounded-md overflow-hidden mt-2" wire:submit.prevent="submit">
 {{--            <input wire:model="company_id" value="{{$company->id}}">--}}
-            <h3 class="text-xl">Оставить свой отзыв</h3>
+            <h3 class="text-xl">Оставить отзыв</h3>
             <div class="mt-2">
                 <label class="block" for="name">Имя *</label>
                 <input class="max-w-[500px] text-gray-900 rounded-md" type="text" name="name" wire:model="name">
