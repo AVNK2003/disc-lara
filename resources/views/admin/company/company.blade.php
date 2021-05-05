@@ -1,18 +1,17 @@
 @extends('layouts.layout')
 @section('title', 'Организации')
 @section('linksAside') <x-aside-links-admins />@endsection
-@section('add-button')
-    <a
-        class="py-2 px-4 space-x-2 rounded-md border hover:bg-red-800"
-        href="{{ route('company.create') }}">
-        Добавить организацию
-    </a>
-@endsection
 @section('content')
     <x-success-session />
+
+    <h1 class="text-2xl text-center">Организации</h1>
+
+    <a class="ml-3 py-2 px-4 space-x-2 rounded-md border hover:bg-red-800" href="{{ route('company.create') }}">Добавить организацию</a>
+
+
     <!-- Table -->
 
-    <div class="flex flex-col mt-6">
+    <div class="flex flex-col mt-2">
         <div class="overflow-x-auto">
             <div class="inline-block min-w-full py-2 align-middle px-2">
                 <div class="overflow-hidden rounded-md shadow-md">
@@ -91,6 +90,10 @@
                                     </a>
                                 </td>
                                 <td class="px-3 py-3 whitespace-nowrap">
+                                    <form action="{{ route('toggleActive', $company) }}" method="post">
+                                        @method('PUT')
+                                        @csrf
+                                        <button class="focus:outline-none" type="submit">
                                     @if($company->active)
                                         <span
                                             class="inline-flex px-2 text-xs font-semibold leading-5 text-green-600 bg-green-100 rounded-full">Активно</span>
@@ -98,8 +101,11 @@
                                         <span
                                             class="inline-flex px-2 text-xs font-semibold leading-5 text-red-600 bg-red-100 rounded-full">Неактивно</span>
                                     @endif
+                                        </button>
+                                    </form>
                                 </td>
-                                <td class="flex justify-around px-3 py-4 text-sm font-medium text-right whitespace-nowrap">
+                                <td class="px-3 py-4 whitespace-nowrap">
+                                    <div class="flex justify-around">
                                     <a href="{{route('company.edit',[$company])}}"
                                        class="text-indigo-600 hover:text-indigo-700">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
@@ -115,7 +121,7 @@
                                         @method('delete')
                                         @csrf
                                         <button
-                                            class="ml-2 text-red-600 hover:text-red-700"
+                                            class="ml-2 block text-red-600 hover:text-red-700"
                                             x-on:click.prevent="if (confirm('Вы точно хотите удалить {{$company->title}}?')) $refs.form.submit()" type="submit">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
                                                  viewBox="0 0 24 24" stroke="currentColor">
@@ -123,6 +129,7 @@
                                             </svg>
                                         </button>
                                     </form>
+                                    </div>
                                 </td>
                             </tr>
                         @endforeach

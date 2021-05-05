@@ -3,15 +3,9 @@
 @section('linksAside') <x-aside-links-admins />@endsection
 @section('content')
     <x-success-session />
-    @include('components.validation')
+    <h1 class="text-2xl text-center">Категории</h1>
 
-    <div class="flex items-baseline justify-between">
-        <a
-            class="py-2 px-4 space-x-2 rounded-md border hover:bg-red-800"
-            href="{{ route('category.create') }}">
-            Добавить категорию
-        </a>
-    </div>
+        <a class="ml-3 py-2 px-4 space-x-2 rounded-md border hover:bg-red-800" href="{{ route('category.create') }}">Добавить категорию</a>
     <div class="flex flex-col mt-2">
         <div class="overflow-x-auto">
             <div class="inline-block min-w-full py-2 align-middle px-2">

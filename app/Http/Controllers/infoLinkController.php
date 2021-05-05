@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\infoLink;
 use Illuminate\Http\Request;
 
-class infoLinksController extends Controller
+class infoLinkController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class infoLinksController extends Controller
     public function index()
     {
         $links = infoLink::select('id', 'title', 'slug','updated_at')->get();
-        return view('admin.links.links', compact('links'));
+        return view('admin.links.index', compact('links'));
     }
 
     /**
@@ -25,7 +25,7 @@ class infoLinksController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.links.create');
     }
 
     /**
@@ -36,7 +36,9 @@ class infoLinksController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $city = new infoLink();
+        $city->fill($request->all())->save();
+        return redirect()->route('infoLink.index')->withSuccess('Ссылка успешно добавлена');
     }
 
     /**
@@ -47,7 +49,10 @@ class infoLinksController extends Controller
      */
     public function show(infoLink $infoLink)
     {
-        //
+//        dd($infoLink);
+        return view('article', [
+            'article' => $infoLink,
+        ]);
     }
 
     /**

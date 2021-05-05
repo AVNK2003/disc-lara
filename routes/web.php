@@ -18,6 +18,8 @@ Route::get('/company/{company}', [\App\Http\Controllers\CompanyController::class
 Route::get('/category/{category:eng}', [\App\Http\Controllers\CategoryController::class, 'showCategory'])->name('showCategory');
 Route::get('/city/{city:eng}', [\App\Http\Controllers\CityController::class, 'showCity'])->name('showCity');
 
+Route::get('/infoLink/{infoLink:slug}', [\App\Http\Controllers\infoLinkController::class, 'show'])->name('showLink');
+
 Route::get('/test', function () {
     return view('forTest', ['title'=>'Тест']);
 });//->middleware(['auth']);
@@ -51,8 +53,9 @@ Route::prefix('cabinet')->group(function () {
     Route::resource('user', \App\Http\Controllers\UserController::class)->middleware(['auth']);
     Route::resource('company', \App\Http\Controllers\CompanyController::class)->middleware(['auth']);
     Route::resource('comment', \App\Http\Controllers\CommentController::class)->middleware(['auth']);
-    Route::resource('infoLink', \App\Http\Controllers\infoLinksController::class)->middleware(['auth']);
+    Route::resource('infoLink', \App\Http\Controllers\infoLinkController::class)->middleware(['auth']);
     Route::put('comment/{comment}/moderate', [\App\Http\Controllers\CommentController::class, 'togglePublish'])->name('togglePublish');
+    Route::put('company/{company}/moderate', [\App\Http\Controllers\CompanyController::class, 'toggleActive'])->name('toggleActive');
 });
 
 

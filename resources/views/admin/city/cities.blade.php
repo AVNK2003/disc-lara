@@ -4,15 +4,10 @@
 @section('content')
     <x-success-session />
 
-<div class="flex items-baseline justify-center">
-    <a
-        class="py-2 px-4 space-x-2 rounded-md border hover:bg-red-800"
-        href="{{ route('city.create') }}"
-    >
-        Добавить город
-    </a>
-</div>
-    <div class="flex flex-col mt-6">
+    <h1 class="text-2xl text-center">Города</h1>
+
+    <a class="ml-3 py-2 px-4 space-x-2 rounded-md border hover:bg-red-800" href="{{ route('city.create') }}">Добавить город</a>
+    <div class="flex flex-col mt-2">
         <div class="overflow-x-auto">
             <div class="inline-block min-w-full py-2 align-middle px-2">
                 <div class="overflow-hidden rounded-md shadow-md">

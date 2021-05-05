@@ -10,6 +10,20 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.article a {
+    color: #2563eb;
+}
+
+.article a:hover {
+    color: #5786ec;
+    text-decoration: underline;
+}
+
+.article a:visited {
+    color: #5786ec;
+}
+
 .body {
     color: #d4d4d4;
     background: #373737 url("/img/bg.png");

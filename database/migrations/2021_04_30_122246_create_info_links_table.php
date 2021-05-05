@@ -15,6 +15,7 @@ class CreateInfoLinksTable extends Migration
     {
         Schema::create('info_links', function (Blueprint $table) {
             $table->id();
+            $table->string('svg');
             $table->string('title');
             $table->text('text');
             $table->string('slug');

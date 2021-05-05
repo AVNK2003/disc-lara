@@ -99,6 +99,7 @@ class CityController extends Controller
 
     public function showCity(City $city)
     {
+        dd($city);
         $companies=$city->companies;
         return view('index', [
             'companies' => $companies,

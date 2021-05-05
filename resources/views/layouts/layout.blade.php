@@ -74,8 +74,8 @@
             @yield('content')
         </main>
 
-        <footer class="footer">©AMS DISCOUNT by <a class="link" href="http://automotosupport.ru">automotosupport.ru</a>
-            2021
+        <footer class="footer"><span class="transition-all" :class="{ 'md:-ml-56': asideOpen }">©AMS DISCOUNT by <a class="link" href="http://automotosupport.ru">automotosupport.ru</a>
+            2021</span>
         </footer>
     </div>
 </div>

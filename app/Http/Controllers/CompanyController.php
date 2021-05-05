@@ -156,4 +156,12 @@ class CompanyController extends Controller
             'comments'=> $comments,
         ]);
     }
+
+    public function toggleActive(Company $company)
+    {
+        $company->active = !$company->active;
+        $company->save();
+        $status = $company->active ? 'Организация размещена в каталоге' : 'Организация убрана из каталога';
+        return redirect()->route('company.index')->with('success', $status);
+    }
 }

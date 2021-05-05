@@ -3,16 +3,10 @@
 @section('linksAside') <x-aside-links-admins />@endsection
 @section('content')
     <x-success-session />
+    <h1 class="text-2xl text-center">Ссылки</h1>
 
-<div class="flex items-baseline justify-center">
-    <a
-        class="py-2 px-4 space-x-2 rounded-md border hover:bg-red-800"
-        href="{{ route('infoLink.create') }}"
-    >
-        Добавить ссылку
-    </a>
-</div>
-    <div class="flex flex-col mt-6">
+    <a class="ml-3 py-2 px-4 space-x-2 rounded-md border hover:bg-red-800" href="{{ route('infoLink.create') }}">Добавить ссылку</a>
+    <div class="flex flex-col mt-2">
         <div class="overflow-x-auto">
             <div class="inline-block min-w-full py-2 align-middle px-2">
                 <div class="overflow-hidden rounded-md shadow-md">
@@ -27,7 +21,7 @@
                             <th
                                 scope="col"
                                 class="px-3 py-2 text-xs font-medium tracking-wider text-left text-gray-300 uppercase">
-                                Ссылка
+                                Адрес ссылки
                             </th>
                             <th
                                 scope="col"
@@ -74,7 +68,7 @@
                                         @csrf
                                         <button
                                             class="ml-2 text-red-600 hover:text-red-700"
-                                            x-on:click.prevent="if (confirm('Вы точно хотите удалить {{$city->name}}?')) $refs.form.submit()" type="submit">
+                                            x-on:click.prevent="if (confirm('Вы точно хотите удалить {{$link->title}}?')) $refs.form.submit()" type="submit">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
                                                  viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
