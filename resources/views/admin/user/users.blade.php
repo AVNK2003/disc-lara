@@ -1,10 +1,10 @@
 @extends('layouts.layout')
-@section('title', 'Партнеры')
+@section('title', '- Партнеры')
 @section('linksAside') <x-aside-links-admins />@endsection
 @section('content')
     <x-success-session />
     @include('components.validation')
-    <h1 class="text-2xl text-center">Партнеры</h1>
+    <h1 class="text-2xl mb-2 text-center">Партнеры</h1>
 
     <a class="ml-3 py-2 px-4 space-x-2 rounded-md border hover:bg-red-800" href="{{ route('category.create') }}">Добавить партнера</a>
 

@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-@section('title')Редактирование категории {{ $category->name }} @endsection
+@section('title')- Редактирование категории {{ $category->name }} @endsection
 @section('linksAside') <x-aside-links-admins />@endsection
 @section('content')
 

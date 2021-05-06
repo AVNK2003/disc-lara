@@ -24,7 +24,7 @@
                  x-transition:leave-start="transform opacity-100 scale-100"
                  x-transition:leave-end="transform opacity-0 scale-95"
                  @click.away="open = false"
-                 class="absolute left-4 origin-top z-10">
+                 class="absolute w-48 left-4 origin-top z-10">
                 <div class="px-2 py-2 bg-black rounded-md shadow">
 
                     @foreach(\App\Models\City::all()->sortBy('name') as $city)
@@ -63,7 +63,7 @@
                 <div class="w-[350px] px-2 py-2 bg-black wrap rounded-md shadow">
 
                     @foreach(\App\Models\Category::all()->sortBy('name') as $category)
-                        <a class="block w-1/2 px-4 py-2 mt-2 text-sm bg-transparent rounded-lg hover:bg-red-800 focus:bg-red-800 focus:text-gray-300 hover:text-gray-300 md:mt-0 focus:outline-none focus:shadow-outline"
+                        <a class="block w-1/2 px-4 py-2 text-sm bg-transparent rounded-lg hover:bg-red-800 focus:bg-red-800 focus:text-gray-300 hover:text-gray-300 md:mt-0 focus:outline-none focus:shadow-outline"
                            href="{{route('showCategory', $category)}}">{{$category->name}}</a>
                     @endforeach
 

@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-@section('title', 'Главная')
+@section('title', '- Личный кабинет')
 @section('linksAside')<x-aside-links-admins />@endsection
 @section('content')
 

@@ -94,8 +94,9 @@ class CategoryController extends Controller
 
     public function showCategory(Category $category)
     {
-        $companies=$category->companies;
+        $companies=$category->companies->where('active');
         return view('index', [
+            'title' => '- '.$category->name,
             'companies' => $companies,
             'mapData' => $this->mapData(null, $category),
         ]);

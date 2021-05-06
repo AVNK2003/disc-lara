@@ -955,6 +955,9 @@ select {
 .ml-6 {
 	margin-left: 1.5rem;
 }
+.mb-1 {
+	margin-bottom: 0.25rem;
+}
 .block {
 	display: block;
 }
@@ -1551,6 +1554,9 @@ select {
 }
 .pr-4 {
 	padding-right: 1rem;
+}
+.pb-0 {
+	padding-bottom: 0px;
 }
 .text-left {
 	text-align: left;
@@ -2608,12 +2614,12 @@ select {
 		margin-left: 14rem;
 	}
 
-	.md\:ml-64 {
-		margin-left: 16rem;
-	}
-
 	.md\:-ml-56 {
 		margin-left: -14rem;
+	}
+
+	.md\:ml-64 {
+		margin-left: 16rem;
 	}
 
 	.md\:flex {

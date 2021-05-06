@@ -15,7 +15,7 @@
 </head>
 <body class="body">
 
-<div x-data="{ asideOpen: true }" class="flex">
+<div x-data="setData()" class="flex">
     <aside :class="{'-ml-56': !asideOpen}"
            class="flex flex-col shadow-lg top-0 left-0 w-56 bg-black fixed h-full z-30 transition-all duration-300">
     <a href="/" class="w-full p-4">
@@ -83,5 +83,13 @@
 @yield('scriptFooter')
 {{--@livewireScripts--}}
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.3/dist/alpine.min.js" defer></script>
+<script>
+    function setData() {
+        if (document.documentElement.clientWidth < 768)
+            return { asideOpen: false };
+        else
+            return { asideOpen: true };
+    }
+</script>
 </body>
 </html>
