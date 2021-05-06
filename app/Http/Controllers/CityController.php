@@ -99,9 +99,9 @@ class CityController extends Controller
 
     public function showCity(City $city)
     {
-        dd($city);
-        $companies=$city->companies;
+        $companies=$city->companies->where('active');
         return view('index', [
+            'title' => '- '.$city->name,
             'companies' => $companies,
             'mapData' => $this->mapData($city),
         ]);

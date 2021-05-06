@@ -1,10 +1,10 @@
 @extends('layouts.layout')
-@section('title', 'Города')
+@section('title', '- Города')
 @section('linksAside') <x-aside-links-admins />@endsection
 @section('content')
     <x-success-session />
 
-    <h1 class="text-2xl text-center">Города</h1>
+    <h1 class="text-2xl mb-2 text-center">Города</h1>
 
     <a class="ml-3 py-2 px-4 space-x-2 rounded-md border hover:bg-red-800" href="{{ route('city.create') }}">Добавить город</a>
     <div class="flex flex-col mt-2">

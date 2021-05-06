@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-@section('title', 'Добавление города')
+@section('title', '- Добавление ссылки')
 @section('scriptMap')<script src="//cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>@endsection
 @section('linksAside') <x-aside-links-admins />@endsection
 @section('content')

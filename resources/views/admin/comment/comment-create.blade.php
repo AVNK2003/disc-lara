@@ -1,10 +1,10 @@
 @extends('layouts.layout')
-@section('title', 'Добавление города')
+@section('title', '- Добавление комментария')
 @section('linksAside') <x-aside-links-admins />@endsection
 @section('content')
 
 
-    <h3 class="mt-6 mb-4 text-xl text-center">Добавление города</h3>
+    <h1 class="mt-6 mb-4 text-xl text-center">Добавление комментария</h1>
 
     <x-city-create-form/>
 

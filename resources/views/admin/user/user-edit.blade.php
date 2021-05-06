@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-@section('title') Редактирование партнера {{ $user->name }} @endsection
+@section('title')- Редактирование партнера {{ $user->name }} @endsection
 @section('linksAside') <x-aside-links-admins />@endsection
 @section('content')
 

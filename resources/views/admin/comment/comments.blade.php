@@ -1,10 +1,10 @@
 @extends('layouts.layout')
-@section('title', 'Отзывы')
+@section('title', '- Отзывы')
 @section('linksAside')<x-aside-links-admins/>@endsection
 @section('content')
     <x-success-session/>
 
-    <h1 class="text-2xl text-center">Отзывы</h1>
+    <h1 class="text-2xl mb-2 text-center">Отзывы</h1>
 
     <div class="flex flex-col mt-2">
         <div class="overflow-x-auto">

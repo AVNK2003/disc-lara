@@ -49,7 +49,6 @@ class infoLinkController extends Controller
      */
     public function show(infoLink $infoLink)
     {
-//        dd($infoLink);
         return view('article', [
             'article' => $infoLink,
         ]);

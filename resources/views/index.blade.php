@@ -1,4 +1,7 @@
 @extends('layouts.layout')
+@isset($title)
+@section('title', $title)
+@endisset
 @section('scriptMap')
     <script src="https://api-maps.yandex.ru/2.1/?apikey=ff28f6ad-d2a1-40a6-b0fe-3ede2df62e11&lang=ru&load=package.standard"
             type="text/javascript">

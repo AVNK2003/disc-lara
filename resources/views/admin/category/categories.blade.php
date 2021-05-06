@@ -1,9 +1,9 @@
 @extends('layouts.layout')
-@section('title', 'Категории')
+@section('title', '- Категории')
 @section('linksAside') <x-aside-links-admins />@endsection
 @section('content')
     <x-success-session />
-    <h1 class="text-2xl text-center">Категории</h1>
+    <h1 class="text-2xl mb-2 text-center">Категории</h1>
 
         <a class="ml-3 py-2 px-4 space-x-2 rounded-md border hover:bg-red-800" href="{{ route('category.create') }}">Добавить категорию</a>
     <div class="flex flex-col mt-2">

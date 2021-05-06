@@ -1,4 +1,5 @@
 @extends('layouts.layout')
+@section('title', '- '.$article->title)
 @section('linksAside') <x-aside-links-all />@endsection
 @section('content')
 
