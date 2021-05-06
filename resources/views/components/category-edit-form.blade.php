@@ -18,7 +18,7 @@
             placeholder="Название"
             id="name"
             name="name"
-            value="{{ $category->name }}"
+            value="{{ old('name') ?? $category->name }}"
             required
         >
         {{--        @error('tel')
@@ -42,7 +42,7 @@
             placeholder="example"
             id="eng"
             name="eng"
-            value="{{ $category->eng}}"
+            value="{{ old('eng') ?? $category->eng}}"
             required
         >
         {{--        @error('password')
@@ -64,7 +64,7 @@
             type="color"
             id="color"
             name="color"
-            value="{{ $category->color }}"
+            value="{{ old('color') ?? $category->color }}"
             required
         >
         {{--        @error('password')

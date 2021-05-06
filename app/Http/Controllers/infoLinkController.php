@@ -62,7 +62,9 @@ class infoLinkController extends Controller
      */
     public function edit(infoLink $infoLink)
     {
-        //
+        return view('admin.links.edit', [
+            'link'  =>  $infoLink,
+        ]);
     }
 
     /**
@@ -74,7 +76,8 @@ class infoLinkController extends Controller
      */
     public function update(Request $request, infoLink $infoLink)
     {
-        //
+        $infoLink->fill($request->all())->save();
+        return redirect()->route('infoLink.index')->with('success', 'Ссылка успешно обновлена');
     }
 
     /**
@@ -85,6 +88,7 @@ class infoLinkController extends Controller
      */
     public function destroy(infoLink $infoLink)
     {
-        //
+        $infoLink->delete();
+        return redirect()->route('infoLink.index')->with('success', 'Ссылка удалена');
     }
 }

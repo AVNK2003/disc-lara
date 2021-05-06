@@ -1,10 +1,10 @@
 @extends('layouts.layout')
-@section('title')- Редактирование категории {{ $category->name }} @endsection
+@section('title', '- Редактирование категории '.$category->name)
 @section('linksAside') <x-aside-links-admins />@endsection
 @section('content')
 
 
-    <h3 class="mt-6 mb-4 text-xl text-center">Редактирование категории {{ $category->name }}</h3>
+    <h3 class="mt-6 mb-4 text-xl text-center">Редактирование категории "{{ $category->name }}"</h3>
 
     @include('components.category-edit-form')
 
