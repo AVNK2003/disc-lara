@@ -55,7 +55,7 @@
                     <span class="hidden sm:block">Позвонить нам</span>
                 </a>
 
-                @guest()
+
                     <a class="flex px-4 py-2 mt-2 text-sm text-gray-400 rounded-lg hover:bg-red-800 focus:bg-red-800 focus:text-gray-300 hover:text-gray-300 md:mt-0 focus:outline-none focus:shadow-outline"
                        href="{{route('login')}}">
                         <span class="mr-1">
@@ -65,23 +65,15 @@
         d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
 </svg>
                 </span>
-                        <span class="hidden sm:block">Войти</span>
+                        <span class="hidden sm:block">
+                        @guest()
+                            Войти
+                        @endguest
+                        @auth()
+                            Личный кабинет
+                        @endauth
+                        </span>
                     </a>
-                @endguest
-
-                @auth()
-                    <a class="flex px-4 py-2 mt-2 text-sm text-gray-400 rounded-lg hover:bg-red-800 focus:bg-red-800 focus:text-gray-300 hover:text-gray-300 md:mt-0 focus:outline-none focus:shadow-outline"
-                       href="{{route('admin')}}">
-                        <span class="mr-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                         stroke="currentColor">
-  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
-</svg>
-                </span>
-                        <span class="hidden sm:block">Личный кабинет</span>
-                    </a>
-                @endauth
             </nav>
 
         </div>

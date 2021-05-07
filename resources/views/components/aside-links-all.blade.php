@@ -72,9 +72,8 @@
         </li>
         @foreach(\App\Models\infoLink::all() as $link)
             <li>
-                <a class="flex items-center p-2 space-x-2 rounded-md focus:bg-red-800 focus:outline-none hover:bg-red-800" href="{{ route('showLink', $link) }}">{!! $link->svg !!}  {{ $link->title }}</a>
+                <a class="flex items-center p-2 space-x-2 rounded-md focus:bg-red-800 focus:outline-none hover:bg-red-800" href="{{ route('showLink', $link) }}">{!! $link->svg !!} <span class="ml-1">{{ $link->title }}</span></a>
             </li>
         @endforeach
     </ul>
 </nav>
-
