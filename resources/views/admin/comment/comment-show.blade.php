@@ -16,9 +16,13 @@
                     </p>
 
                     {{--                            Рейтинг--}}
-                    <div class="rating-mini">
+                    <div class="inline-block text-yellow-500">
                         @for($i=0; $i<5; $i++)
-                            <span @if($i<$comment->rating)class="active"@endif></span>
+                            @if($i<$comment->rating)
+                                <i class="fas fa-star fa-sm"></i>
+                            @else
+                                <i class="far fa-star fa-sm text-gray-500"></i>
+                            @endif
                         @endfor
                     </div>
                 </div>

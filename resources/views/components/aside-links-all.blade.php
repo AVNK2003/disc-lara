@@ -3,12 +3,8 @@
 
         <li x-data="{ open: false }">
             <a @click.prevent="open = !open" href="#" class="flex items-center p-2 space-x-2 rounded-md focus:bg-red-800 focus:outline-none hover:bg-red-800">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24"
-                     stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                          d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
-                </svg>
-                Город
+                <i class="fas fa-building w-5 text-base"></i>
+                <span>Город</span>
                 <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}"
                      class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform">
                     <path fill-rule="evenodd"
@@ -38,12 +34,8 @@
 
         <li x-data="{ open: false }">
             <a @click.prevent="open = !open" href="#" class="flex items-center p-2 space-x-2 rounded-md focus:outline-none focus:bg-red-800 hover:bg-red-800">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24"
-                     stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                          d="M5 19a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1M5 19h14a2 2 0 002-2v-5a2 2 0 00-2-2H9a2 2 0 00-2 2v5a2 2 0 01-2 2z"></path>
-                </svg>
-                Категории
+                <i class="fas fa-folder w-5 text-base"></i>
+                <span>Категории</span>
                 <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}"
                      class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform">
                     <path fill-rule="evenodd"
@@ -72,7 +64,9 @@
         </li>
         @foreach(\App\Models\infoLink::all() as $link)
             <li>
-                <a class="flex items-center p-2 space-x-2 rounded-md focus:bg-red-800 focus:outline-none hover:bg-red-800" href="{{ route('showLink', $link) }}">{!! $link->svg !!} <span class="ml-1">{{ $link->title }}</span></a>
+                <a class="flex items-center p-2 space-x-2 rounded-md focus:bg-red-800 focus:outline-none hover:bg-red-800" href="{{ route('showLink', $link) }}">
+                    <i class="fas w-5 text-base">{{$link->svg}}</i>
+                    <span>{{ $link->title }}</span></a>
             </li>
         @endforeach
     </ul>

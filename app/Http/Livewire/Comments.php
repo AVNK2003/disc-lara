@@ -36,28 +36,29 @@ class Comments extends Component
     public function setLike($id)
     {
         $comment = $this->comments->find($id);
-        $likes = session($id);
-        if($likes == 'like') {
-            $comment->likes--;
-            session([$id => false]);
-        }
-
-        else {
-            if ($likes == 'dislike')
+        if(session()->has($id)) {
+            if(session($id) == 'like') {
+                $comment->likes--;
+                session()->forget($id);
+                $comment->save();
+                return true;
+            } else {
                 $comment->dislikes--;
-            $comment->likes++;
-            session([$id => 'like']);
+            }
         }
+        $comment->likes++;
+        session([$id => 'like']);
         $comment->save();
     }
 
     public function setDislike($id)
     {
         $comment = $this->comments->find($id);
-        $likes = session($id);
+        $likes = session()->has($id);
+//        dd($likes);
         if($likes == 'dislike') {
             $comment->dislikes--;
-            session([$id => false]);
+            session()->forget($id);
         }
 
         else {
@@ -65,7 +66,7 @@ class Comments extends Component
                 $comment->likes--;
 
             $comment->dislikes++;
-            session([$id => 'dislike']);
+            session()->put($id, 'dislike');
         }
         $comment->save();
     }

@@ -16,9 +16,18 @@
                         </p>
 
                         {{--                            Рейтинг--}}
-                        <div class="rating-mini">
+{{--                        <div class="rating-mini">
                             @for($i=0; $i<5; $i++)
                                 <span @if($i<$comment->rating)class="active"@endif></span>
+                            @endfor
+                        </div>--}}
+                        <div class="inline-block text-yellow-500">
+                            @for($i=0; $i<5; $i++)
+                                @if($i<$comment->rating)
+                                    <i class="fas fa-star fa-sm"></i>
+                                @else
+                                    <i class="far fa-star fa-sm text-gray-500"></i>
+                                @endif
                             @endfor
                         </div>
                     </div>
@@ -32,14 +41,17 @@
                     <p class="mt-1">{{$comment->review}}</p>
                 </div>
 
+{{--
 
                 <div class="flex mt-4 text-sm text-gray-500 fill-current">
 
                     <div class="flex ml-auto items-center bg-gray-800 rounded py-2 px-4">
                         <span>Полезный отзыв?</span>
 
-                        {{--                            Лайк--}}
-                        <button wire:click="setLike({{$comment->id}})" class="flex items-center ml-6 focus:outline-none @if(session($comment->id) == 'like') text-gray-300 @endif">
+                        --}}
+{{--                            Лайк--}}{{--
+
+                        <button wire:click="setLike({{$comment->id}})" class="flex items-center ml-6 focus:outline-none @if(session()->get($comment->id) == 'like') text-gray-300 @endif">
                             <svg class="w-3 h-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                 <path
                                     d="M11 0h1v3l3 7v8a2 2 0 0 1-2 2H5c-1.1 0-2.31-.84-2.7-1.88L0 12v-2a2 2 0 0 1 2-2h7V2a2 2 0 0 1 2-2zm6 10h3v10h-3V10z"/>
@@ -47,8 +59,10 @@
                             <span class="ml-2">{{$comment->likes}}</span>
                         </button>
 
-                        {{--                            Дизлайк--}}
-                        <button wire:click="setDislike({{$comment->id}})" class="flex items-center ml-4 focus:outline-none @if(session($comment->id) == 'dislike') text-gray-300 @endif">
+                        --}}
+{{--                            Дизлайк--}}{{--
+
+                        <button wire:click="setDislike({{$comment->id}})" class="flex items-center ml-4 focus:outline-none @if(session()->get($comment->id) == 'dislike') text-gray-300 @endif">
                             <svg class="w-3 h-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                 <path
                                     d="M11 20a2 2 0 0 1-2-2v-6H2a2 2 0 0 1-2-2V8l2.3-6.12A3.11 3.11 0 0 1 5 0h8a2 2 0 0 1 2 2v8l-3 7v3h-1zm6-10V0h3v10h-3z"/>
@@ -58,6 +72,7 @@
                     </div>
                 </div>
 
+--}}
 
             </div>
         </div>
@@ -77,15 +92,25 @@
                 <label for="rating" class="block">Оценка *</label>
                 <div class="rating-area">
                     <input type="radio" id="star-5" name="rating" value="5" wire:model="rating">
-                    <label for="star-5" title="Оценка «5»"></label>
+                    <label for="star-5" title="Оценка «5»">
+                        <i class="fas fa-star"></i>
+                    </label>
                     <input type="radio" id="star-4" name="rating" value="4" wire:model="rating">
-                    <label for="star-4" title="Оценка «4»"></label>
+                    <label for="star-4" title="Оценка «4»">
+                        <i class="fas fa-star"></i>
+                    </label>
                     <input type="radio" id="star-3" name="rating" value="3" wire:model="rating">
-                    <label for="star-3" title="Оценка «3»"></label>
+                    <label for="star-3" title="Оценка «3»">
+                        <i class="fas fa-star"></i>
+                    </label>
                     <input type="radio" id="star-2" name="rating" value="2" wire:model="rating">
-                    <label for="star-2" title="Оценка «2»"></label>
+                    <label for="star-2" title="Оценка «2»">
+                        <i class="fas fa-star"></i>
+                    </label>
                     <input type="radio" id="star-1" name="rating" value="1" wire:model="rating">
-                    <label for="star-1" title="Оценка «1»"></label>
+                    <label for="star-1" title="Оценка «1»">
+                        <i class="fas fa-star"></i>
+                    </label>
                 </div>
             </div>
             @error('rating') <span class="text-red-600">{{ $message }}</span> @enderror

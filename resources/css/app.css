@@ -12,17 +12,15 @@
 }
 
 .article a {
-    color: #2563eb;
+    text-decoration: none;
+    color: #00a1d2;
+    user-select: none;
 }
 
 .article a:hover {
-    color: #5786ec;
     text-decoration: underline;
 }
 
-.article a:visited {
-    color: #5786ec;
-}
 
 .body {
     color: #d4d4d4;
@@ -436,44 +434,24 @@
     line-height: 32px;
     color: lightgrey;
 }
-.rating-area:not(:checked) > label:before {
-    content: '★';
-}
+
 .rating-area > input:checked ~ label {
-    color: gold;
+    color: rgb(245, 158, 11);
 }
 .rating-area:not(:checked) > label:hover,
 .rating-area:not(:checked) > label:hover ~ label {
-    color: gold;
+    color: rgb(245, 158, 11);;
 }
 .rating-area > input:checked + label:hover,
 .rating-area > input:checked + label:hover ~ label,
 .rating-area > input:checked ~ label:hover,
 .rating-area > input:checked ~ label:hover ~ label,
 .rating-area > label:hover ~ input:checked ~ label {
-    color: gold;
+    color: rgb(245, 158, 11);;
 }
 .rate-area > label:active {
     position: relative;
 }
-.rating-mini {
-    display: inline-block;
-    font-size: 0;
-}
-.rating-mini span {
-    padding: 0;
-    font-size: 20px;
-    line-height: 1;
-    color: lightgrey;
-}
-.rating-mini > span:before {
-    content: '★';
-}
-.rating-mini > span.active {
-    color: gold;
-}
-
-
 
 
 .footer {

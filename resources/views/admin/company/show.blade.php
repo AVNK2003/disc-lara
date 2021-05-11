@@ -21,7 +21,7 @@
                 <ul class="flex">
                     <li class="inline-block mr-8">
                         Рейтинг:&nbsp;
-                        <div class="rating-mini">
+{{--                        <div class="rating-mini">
                             @for($i=0; $i<5; $i++)
                             <span class="
                             @if($comments->count())
@@ -29,6 +29,21 @@
                             @endif
                                 "></span>
                             @endfor
+                        </div>--}}
+                        <div class="inline-block text-yellow-500">
+                            @if($comments->count())
+                                @for($i=0; $i<5; $i++)
+                                    @if(round($comments->sum('rating')/$comments->count())>$i)
+                                        <i class="fas fa-star"></i>
+                                    @else
+                                        <i class="far fa-star text-gray-500"></i>
+                                    @endif
+                                @endfor
+                            @else
+                                @for($i=0; $i<5; $i++)
+                                    <i class="far fa-star text-gray-500"></i>
+                                @endfor
+                            @endif
                         </div>
                         &nbsp;(Отзывов:&nbsp;{{$comments->count()}})
                     </li>
@@ -69,17 +84,17 @@
 
 {{--                Телефон--}}
                 @if($company->tel)
-                <div class="mt-1 flex items-center">
+                <div class="mt-1 flex items-center article">
                     <i class="fas fa-phone-alt text-pink-700 w-5 h-5 mr-2"></i>
-                    <span>Телефон: {{$company->tel}}</span>
+                    <span>Телефон: {!! $company->tel !!}</span>
                 </div>
                 @endif
 
 {{--                Сайт--}}
                 @if($company->site)
-                <div class="flex items-center mt-1">
+                <div class="flex items-center mt-1 article">
                     <i class="fas fa-globe text-blue-400 w-5 h-5 mr-2"></i>
-                    <span>Сайт: <a class="text-blue-400" href="{{$company->site}}" target="_blank">{{$company->site}}</a></span>
+                    <span>Сайт: <a href="{{$company->site}}" target="_blank">{{$company->site}}</a></span>
                 </div>
                 @endif
 
@@ -91,22 +106,22 @@
 
                     @if($company->instagram)
                         <a href="{{ $company->instagram }}" class="ml-2" target="_blank">
-                            <img class="w-7 h-7" src="/img/icon/instagram.svg">
+                            <img class="w-7 h-7" src="/img/icon/instagram.svg" alt="instagram">
                         </a>
                     @endif
                     @if($company->facebook)
                         <a href="{{ $company->facebook }}" class="ml-2" target="_blank">
-                            <img class="w-7 h-7" src="/img/icon/facebook.svg">
+                            <img class="w-7 h-7" src="/img/icon/facebook.svg" alt="Facebook">
                         </a>
                     @endif
                     @if($company->vk)
                         <a href="{{ $company->vk }}" class="ml-2" target="_blank">
-                            <img class="w-7 h-7" src="/img/icon/vk.svg">
+                            <img class="w-7 h-7" src="/img/icon/vk.svg" alt="VK">
                         </a>
                     @endif
                     @if($company->youtube)
                         <a href="{{ $company->youtube }}" class="ml-2" target="_blank">
-                            <img class="w-7 h-7" src="/img/icon/youtube.svg">
+                            <img class="w-7 h-7" src="/img/icon/youtube.svg" alt="YouTube">
                         </a>
                     @endif
 
@@ -154,12 +169,6 @@
         <h2 class="p-4 bg-gradient-to-b from-[#100000] via-[#300000] to-[#200000] px-6 py-4 border-b">Карта</h2>
             <div class="h-[400px]" id="map"></div>
     </section>
-    @endif
-
-    {{--    Отзывы--}}
-{{--    <livewire:comments :company_id="$company->id">--}}
-
-@livewire('comments', ['comments' => $comments, 'company_id' => $company->id])
     <script type="text/javascript">
         ymaps.ready(init);
 
@@ -173,4 +182,10 @@
             myMap.behaviors.disable('scrollZoom');
         }
     </script>
+    @endif
+
+    {{--    Отзывы--}}
+{{--    <livewire:comments :company_id="$company->id">--}}
+
+@livewire('comments', ['comments' => $comments, 'company_id' => $company->id])
 @endsection
